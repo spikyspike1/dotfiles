@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # install packages
-sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-themes-extra mpc mpd mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi
+sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm gnome-themes-extra mpc mpd mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi lightdm-webkit2-greeter
+
 # create directories
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo mkdir -p /etc/chrony.d
@@ -44,6 +45,10 @@ sudo cp hostname /etc/
 sudo cp vconsole.conf /etc/
 sudo cp default.pa /etc/pulse/
 sudo cp -r Bibata-Modern-Classic /usr/share/icons/
+sudo cp -r macOS /usr/share/plymouth/themes/
+sudo cp -r minimal /usr/share/lightdm-webkit/themes/
+sudo cp cpu.sh /etc/polybar/
+sudo cp mem.sh /etc/polybar/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
@@ -74,7 +79,7 @@ sudo systemctl enable --now cpupower.service
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 sudo timedatectl set-timezone Europe/Warsaw
 #sudo plymouth-set-default-theme FEDORA-CORE-4-BOOT-SPLASH-PORT_V2.0_PLYMOUTH-THEME -R
-sudo plymouth-set-default-theme arch-mac-style -R
+sudo plymouth-set-default-theme macOS -R
 sudo hwclock --systohc
 sudo sysctl --system
 sudo locale-gen
