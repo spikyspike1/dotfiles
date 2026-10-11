@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export GTK_CSD=0
+exec ~/.local/bin/zen "$@"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xset s 6
+betterlockscreen -l
+xset s 360

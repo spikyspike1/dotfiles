@@ -1,0 +1,84 @@
+#!/bin/sh
+
+# install packages
+sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-themes-extra mpc mpd mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi
+# create directories
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo mkdir -p /etc/chrony.d
+sudo mkdir -p /etc/sysctl.d
+mkdir -p /home/spike/.cache
+mkdir -p /home/spike/screenshots
+# copy files
+cp .bashrc /home/spike/
+cp .xinitrc /home/spike/
+cp .xsession /home/spike/
+cp .xprofile /home/spike/
+cp -r .config /home/spike/
+cp -r music /home/spike/
+cp -r 'Restore Firefox' /home/spike/
+cp -r Downloads /home/spike/
+cp -r aur-malware-check /home/spike/
+cp -r .local /home/spike/
+cp -r .Xresources /home/spike/
+sudo cp lock-screen /usr/bin/
+sudo cp config.ini /etc/polybar/
+sudo cp -r lightdm/* /etc/lightdm/
+sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
+sudo cp cpupower.service /etc/systemd/system/
+sudo cp chrony.conf /etc/chrony.d/
+sudo cp mkinitcpio.conf /etc/
+sudo cp mkinitcpio.d/* /etc/mkinitcpio.d/
+sudo cp progress-00.bmp /usr/share/systemd/bootctl/
+sudo cp -r FEDORA-CORE-4-BOOT-SPLASH-PORT_V2.0_PLYMOUTH-THEME /usr/share/plymouth/themes/
+sudo cp -r arch-mac-style /usr/share/plymouth/themes/
+sudo cp loader.conf /efi/loader/
+sudo cp plymouthd.conf /etc/plymouth/
+sudo cp cmdline /etc/kernel/
+sudo cp 99-sysrq.conf /etc/sysctl.d/
+sudo cp 50-default.conf /usr/lib/sysctl.d/
+sudo cp lightdm-autologin /etc/pam.d/
+sudo cp sudoers /etc/
+sudo cp locale.gen /etc/
+sudo cp locale.conf /etc/
+sudo cp hostname /etc/
+sudo cp vconsole.conf /etc/
+sudo cp default.pa /etc/pulse/
+sudo cp -r Bibata-Modern-Classic /usr/share/icons/
+# font
+sudo systemctl restart systemd-vconsole-setup.service 
+# install non-packaged things (requires some user interaction)
+git clone --recursive https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX=/home/spike/.local
+curl -sS https://starship.rs/install.sh | sh
+git clone https://github.com/Raymo111/i3lock-color.git
+cd i3lock-color
+sh install-i3lock-color.sh
+cd ..
+wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
+curl -s https://updates.zen-browser.app/install.sh | sh
+sudo cp zen /usr/bin/
+sudo chmod +x /usr/bin/zen
+cp -r .cache/betterlockscreen /home/spike/.cache/
+# install the cachyos kernel
+sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key F3B607488DB35A47
+sudo pacman -U \
+https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-20240331-1-any.pkg.tar.zst \
+https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-27-1-any.pkg.tar.zst
+sudo cp pacman.conf /etc/
+sudo pacman -Syu --noconfirm
+sudo pacman -S --noconfirm linux-cachyos linux-cachyos-headers
+# finishing touches
+sudo systemctl enable --now chronyd
+sudo systemctl enable --now cpupower.service
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+sudo timedatectl set-timezone Europe/Warsaw
+#sudo plymouth-set-default-theme FEDORA-CORE-4-BOOT-SPLASH-PORT_V2.0_PLYMOUTH-THEME -R
+sudo plymouth-set-default-theme arch-mac-style -R
+sudo hwclock --systohc
+sudo sysctl --system
+sudo locale-gen
+rm -rf i3lock-color ble.sh
+# done
+sudo systemctl enable --now dbus
+sudo systemctl enable --now lightdm

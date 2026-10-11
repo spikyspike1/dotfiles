@@ -1,0 +1,11 @@
+<config>
+
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "~/music"
+
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "0"
+visualizer_output_name = "visualizer"
+visualizer_in_stereo = yes
+visualizer_type = "spectrum" 

@@ -1,0 +1,1 @@
+root=/dev/archvg/root rw  quiet splash loglevel=0 rd.udev.log_priority=3
