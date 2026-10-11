@@ -3,5 +3,5 @@ git config --global user.email ""
 git init
 git add -A
 git commit -m "e"
-git remote add origin git@github.com:spikyspike1/dotfiles.git
+git remote set-url origin git@github.com:spikyspike1/dotfiles.git
 git push -u origin main
