@@ -25,7 +25,7 @@
     "break",
     "colors"
   ],
-  "display": {
+  "display": {"separator": " 󰁔  ",
     "color": {
       "keys": "#FF66CC",
       "title": "#FF66CC",
