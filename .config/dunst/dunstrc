@@ -67,7 +67,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 0
+    progress_bar_corner_radius = 5
 
     # Define which corners to round when drawing the progress bar. If progress_bar_corner_radius
     # is set to 0 this option will be ignored.
@@ -359,14 +359,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#404040"
-    foreground = "#888888"
+    foreground = "#ffffff"
     timeout = 10
+	highlight = "#ff66cc"
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
     background = "#404040"
     foreground = "#ffffff"
+	highlight = "#ff66cc"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
@@ -376,6 +378,7 @@
     background = "#404040"
     foreground = "#ffffff"
     frame_color = "#ff0000"
+	highlight = "#ff0000"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency

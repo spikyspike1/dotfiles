@@ -1,11 +1,7 @@
-#
-# wm independent hotkeys
-#
 XF86MonBrightnessUp
-	brightnessctl s 10%+
+	~/.config/sxhkd/brightness.sh 5%+
 XF86MonBrightnessDown
-	brightnessctl s 10%-
-# terminal emulator
+	~/.config/sxhkd/brightness.sh 5%-
 super + q
 	kitty
 super + l
