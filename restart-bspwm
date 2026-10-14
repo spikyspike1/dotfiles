@@ -1,7 +1,9 @@
-bspc wm -r
+pkill -f '/bin/bash /home/spike/.config/bspwm/scripts/battery.sh'
+pkill -f '/bin/bash /home/spike/.config/bspwm/scripts/updates.sh'
 pkill sxhkd
 pkill picom
 pkill polybar
 sxhkd &
 picom &
 polybar &
+bspc wm -r
