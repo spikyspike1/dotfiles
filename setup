@@ -22,7 +22,6 @@ cp -r aur-malware-check /home/spike/
 cp -r .local /home/spike/
 cp -r .Xresources /home/spike/
 sudo cp lock-screen /usr/bin/
-sudo cp config.ini /etc/polybar/
 sudo cp -r lightdm/* /etc/lightdm/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
 sudo cp cpupower.service /etc/systemd/system/
@@ -50,7 +49,6 @@ sudo cp -r minimal /usr/share/lightdm-webkit/themes/
 sudo cp -r litarvan /usr/share/lightdm-webkit/themes/
 sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
 sudo cp restart-bspwm /usr/bin/
-sudo cp updates.sh /etc/polybar/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
