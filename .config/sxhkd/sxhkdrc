@@ -7,9 +7,10 @@ super + q
 	kitty
 super + l
         /usr/bin/lock-screen
-super + z
+super + b
 	/usr/bin/zen
-# program launcher
+super + e
+	pcmanfm
 super + Escape
 	rofi -show run
 Print
@@ -87,13 +88,14 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
-
+alt + Tab
+	bspc node -f next.local.!hidden.window
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
