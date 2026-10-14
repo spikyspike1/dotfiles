@@ -1,0 +1,6 @@
+pkill sxhkd
+pkill picom
+pkill polybar
+sxhkd &
+picom &
+polybar &
