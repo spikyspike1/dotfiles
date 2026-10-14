@@ -7,7 +7,8 @@ super + q
 	kitty
 super + l
         /usr/bin/lock-screen
-#	betterlockscreen -l blur
+super + z
+	/usr/bin/zen
 # program launcher
 super + Escape
 	rofi -show run

@@ -28,9 +28,9 @@ elif (( cpu <= 53 )); then
 	color="#ffff00"
 elif (( cpu <= 80 )); then
 	color="#ff8800"
-elif (( cpu <= 98 )); then
+elif (( cpu <= 94 )); then
 	color="#ff0000"
 else
-	color="#cc00cc"
+	color="#ff00ff"
 fi
 printf '%%{F%s}%%{F-}\n' "$color"
