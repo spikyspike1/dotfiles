@@ -26,3 +26,5 @@ bspc rule -a Screenkey manage=off
 bspc config normal_border_color '#FF66CC'
 bspc config focused_border_color '#FF66CC'
 bspc config active_border_color '#FF66CC'
+sleep 3
+~/.config/bspwm/scripts/updates.sh &
