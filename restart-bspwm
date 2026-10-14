@@ -1,3 +1,4 @@
+bspc wm -r
 pkill sxhkd
 pkill picom
 pkill polybar

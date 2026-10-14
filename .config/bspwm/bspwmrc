@@ -9,6 +9,7 @@ export XCURSOR_SIZE=24
 xrdb -merge /home/spike/.Xresources 
 xsetroot -cursor_name left_ptr
 xset r rate 200 48
+dunst &
 bspc config border_width         0
 bspc config window_gap          12
 

@@ -1,7 +1,10 @@
 #
 # wm independent hotkeys
 #
-
+XF86MonBrightnessUp
+	brightnessctl s 10%+
+XF86MonBrightnessDown
+	brightnessctl s 10%-
 # terminal emulator
 super + q
 	kitty
