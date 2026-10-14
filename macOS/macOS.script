@@ -172,6 +172,7 @@ fun display_password_callback (prompt, bullets)
     anim.sprite.SetOpacity(0);
 	
     dialog.prompt_sprite.SetImage(Image.Text(prompt, 1.0, 1.0, 1.0));
+dialog.prompt_sprite.SetPosition(5000,5000,5000);
     for (index = 0; dialog.bullet[index] || index < bullets; index++)
       { 
 	
@@ -198,7 +199,6 @@ prompt = Image.Text(prompt,1.0, 1.0, 1.0);
 sprite_prompt.SetImage(prompt);
 sprite_prompt.SetPosition(Window.GetX() + (Window.GetWidth() - prompt.GetWidth()) / 2, Window.GetY() + Window.GetHeight() * 0.93, 2);
   }
-
 /* instantiate dialog at startup, to ensure all icons are loaded in memory before initrd is unmounted, in case /usr isn't mounted yet */
 dialog_setup(); dialog_opacity(0);
 Plymouth.SetDisplayNormalFunction(display_normal_callback);
@@ -222,13 +222,14 @@ progress_bar.y = Window.GetY() + Window.GetHeight() * 0.65  - progress_box.image
 progress_bar.sprite.SetPosition(progress_bar.x, progress_bar.y, 1);
 
 fun progress_callback (duration, progress)
-  {
+if (status != "password") {  
+{
     if (progress_bar.image.GetWidth () != Math.Int (progress_bar.original_image.GetWidth () * progress))
       {
         progress_bar.image = progress_bar.original_image.Scale(progress_bar.original_image.GetWidth(progress_bar.original_image) * progress, progress_bar.original_image.GetHeight());
         progress_bar.sprite.SetImage (progress_bar.image);
       }
-  }}
+  }}}
 if (Plymouth.GetMode() != "shutdown" && Plymouth.GetMode() != "reboot") {
 Plymouth.SetBootProgressFunction(progress_callback); }
 
