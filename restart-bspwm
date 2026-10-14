@@ -3,6 +3,7 @@ pkill -f '/bin/bash /home/spike/.config/bspwm/scripts/updates.sh'
 pkill sxhkd
 pkill picom
 pkill polybar
+pkill dunst
 sxhkd &
 picom &
 polybar &
