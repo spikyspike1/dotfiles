@@ -17,9 +17,9 @@ Print
 	flameshot gui --path ~/screenshots/
 alt + Escape
 	kitty htop
-# make sxhkd reload its configuration files:
 super + r
-	pkill -USR1 -x sxhkd
+#	pkill -USR1 -x sxhkd
+	/usr/bin/restart-bspwm
 shift + alt + p
 	mpc toggle
 shift + alt + Up
@@ -48,9 +48,9 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute 0 toggle; mpc pause
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
-
+super + alt + q
+#	bspc {quit,wm -r}
+	bspc quit
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}

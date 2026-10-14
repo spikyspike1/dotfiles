@@ -49,8 +49,6 @@ sudo cp -r macOS /usr/share/plymouth/themes/
 sudo cp -r minimal /usr/share/lightdm-webkit/themes/
 sudo cp -r litarvan /usr/share/lightdm-webkit/themes/
 sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
-sudo cp cpu.sh /etc/polybar/
-sudo cp mem.sh /etc/polybar/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
