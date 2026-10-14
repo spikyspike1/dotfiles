@@ -50,6 +50,7 @@ sudo cp -r minimal /usr/share/lightdm-webkit/themes/
 sudo cp -r litarvan /usr/share/lightdm-webkit/themes/
 sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
 sudo cp restart-bspwm /usr/bin/
+sudo cp updates.sh /etc/polybar/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
