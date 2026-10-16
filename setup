@@ -15,12 +15,12 @@ cp .bashrc /home/spike/
 cp .xinitrc /home/spike/
 cp .xsession /home/spike/
 cp .xprofile /home/spike/
+cp .Xresources /home/spike/
 cp -r .config /home/spike/
 cp -r music /home/spike/
 cp -r 'Restore Firefox' /home/spike/
 cp -r aur-malware-check /home/spike/
 cp -r .local /home/spike/
-cp -r .Xresources /home/spike/
 sudo cp laundry.jpg /usr/share/backgrounds/
 sudo cp lockscreen.jpg /usr/share/backgrounds/
 sudo cp lock-screen /usr/bin/
@@ -32,8 +32,6 @@ sudo cp mkinitcpio.conf /etc/
 sudo cp mkinitcpio.d/* /etc/mkinitcpio.d/
 sudo cp progress-00.bmp /usr/share/systemd/bootctl/
 sudo cp -r FEDORA-CORE-4-BOOT-SPLASH-PORT_V2.0_PLYMOUTH-THEME /usr/share/plymouth/themes/
-sudo cp -r arch-mac-style /usr/share/plymouth/themes/
-sudo cp loader.conf /efi/loader/
 sudo cp plymouthd.conf /etc/plymouth/
 sudo cp cmdline /etc/kernel/
 sudo cp 99-sysrq.conf /etc/sysctl.d/
@@ -79,7 +77,6 @@ sudo systemctl enable --now chronyd
 sudo systemctl enable --now cpupower.service
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 sudo timedatectl set-timezone Europe/Warsaw
-#sudo plymouth-set-default-theme FEDORA-CORE-4-BOOT-SPLASH-PORT_V2.0_PLYMOUTH-THEME -R
 sudo plymouth-set-default-theme macOS -R
 sudo hwclock --systohc
 sudo sysctl --system
