@@ -9,6 +9,7 @@ sudo mkdir -p /etc/chrony.d
 sudo mkdir -p /etc/sysctl.d
 mkdir -p /home/spike/.cache
 mkdir -p /home/spike/screenshots
+mkdir /home/spike/Downloads
 # copy files
 cp .bashrc /home/spike/
 cp .xinitrc /home/spike/
@@ -17,10 +18,11 @@ cp .xprofile /home/spike/
 cp -r .config /home/spike/
 cp -r music /home/spike/
 cp -r 'Restore Firefox' /home/spike/
-cp -r Downloads /home/spike/
 cp -r aur-malware-check /home/spike/
 cp -r .local /home/spike/
 cp -r .Xresources /home/spike/
+sudo cp laundry.jpg /usr/share/backgrounds/
+sudo cp lockscreen.jpg /usr/share/backgrounds/
 sudo cp lock-screen /usr/bin/
 sudo cp -r lightdm/* /etc/lightdm/
 sudo cp 30-touchpad.conf /etc/X11/xorg.conf.d/
