@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 brightnessctl set "$1"
 brightness=$(brightnessctl -m | awk -F, '{gsub(/%/, "", $4); print $4}')

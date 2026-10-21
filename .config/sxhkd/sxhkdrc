@@ -1,7 +1,7 @@
 XF86MonBrightnessUp
-	~/.config/sxhkd/brightness.sh 5%+
+	~/.config/sxhkd/scripts/brightness.sh 5%+
 XF86MonBrightnessDown
-	~/.config/sxhkd/brightness.sh 5%-
+	~/.config/sxhkd/scripts/brightness.sh 5%-
 super + q
 	kitty
 super + l
@@ -41,11 +41,11 @@ shift + alt + Left
 
 
 XF86AudioRaiseVolume
-	pactl set-sink-volume 0 +2%
+	~/.config/sxhkd/scripts/volume.sh +2%
 XF86AudioLowerVolume
-	pactl set-sink-volume 0 -2%
+	~/.config/sxhkd/scripts/volume.sh -2%
 XF86AudioMute
-	pactl set-sink-mute 0 toggle; mpc pause
+	pactl set-sink-mute 0 toggle; mpc pause-if-playing
 # quit/restart bspwm
 super + alt + q
 #	bspc {quit,wm -r}
