@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pkill -f '/bin/bash /home/spike/.config/bspwm/scripts/battery.sh'
 pkill -f '/bin/bash /home/spike/.config/bspwm/scripts/updates.sh'
 pkill sxhkd
@@ -7,4 +9,4 @@ pkill dunst
 sxhkd &
 picom &
 polybar &
-bspc wm -r
+#bspc wm -r &
