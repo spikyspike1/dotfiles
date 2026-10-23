@@ -123,7 +123,7 @@ root ALL=(ALL:ALL) ALL
 
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL:ALL) ALL
-
+%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/wg, /usr/bin/wg-quick
 ## Same thing without a password
 # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
 
