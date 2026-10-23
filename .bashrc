@@ -8,12 +8,12 @@ alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 alias icat='kitty +kitten icat'
 alias ff='printf "\n";fastfetch'
-#alias ff='fastfetch --config configsmall3.jsonc --logo-type small'
+alias ffs='fastfetch --config configsmall.jsonc --logo-type small'
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
 alias clr='clear'
 if [[ -n "$TERM_PROGRAM" || -n "$KITTY_WINDOW_ID" ]]; then
-	fastfetch --config configsmall.jsonc --logo-type small
+#	fastfetch --config configsmall.jsonc --logo-type small
 	eval "$(starship init bash)"
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion

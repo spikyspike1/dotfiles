@@ -2,6 +2,7 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "modules": [
+    "break",
     "title",
     "separator",
 	  "os",
@@ -15,6 +16,7 @@
     "uptime",
     "terminal",
     "wm",
+    "break"
 
   ],
   "display": {"separator": "  ",
@@ -33,7 +35,7 @@
       "3": "#FF66CC"
     },
     "padding": {
-      "top": 0,
+      "top": 1,
       "left": 1,
       "right": 2,
       "bottom": 0
