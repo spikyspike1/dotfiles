@@ -4,6 +4,7 @@ XF86MonBrightnessDown
 	~/.config/sxhkd/scripts/brightness.sh 5%-
 XF86AudioMicMute
 	~/.config/sxhkd/scripts/mic.sh
+
 super + q
 	kitty
 super + l
