@@ -91,7 +91,7 @@ fun refresh_callback ()
 
   }
  
-if (Plymouth.GetMode() != "suspend" && Plymouth.GetMode() != "resume" && Plymouth.GetMode() != "shutdown") {
+if (Plymouth.GetMode() != "suspend" && Plymouth.GetMode() != "resume") {
   Plymouth.SetRefreshFunction (refresh_callback);
 }
 
@@ -105,8 +105,8 @@ fun dialog_setup()
     local.lock;
     local.entry;
     local.prompt_sprite;
-    
     box.image = ImageNew("box.png");
+
     lock.image = ImageNew("lock.png");
     entry.image = ImageNew("entry.png");
     
@@ -206,8 +206,9 @@ Plymouth.SetDisplayPasswordFunction(display_password_callback);
 Plymouth.SetMessageFunction(display_message_callback);
 
 #----------------------------------------- Progress Bar --------------------------------
-if (Plymouth.GetMode != "shutdown" && Plymouth.GetMode != "reboot") {
+if (Plymouth.GetMode() != "shutdown" && Plymouth.GetMode() != "reboot") {
 progress_box.image = Image("progress_box.png");
+
 progress_box.sprite = Sprite(progress_box.image);
 
 progress_box.x = Window.GetX() + Window.GetWidth() / 2 - progress_box.image.GetWidth() / 2;
@@ -230,17 +231,14 @@ if (status != "password") {
         progress_bar.sprite.SetImage (progress_bar.image);
       }
   }}}
-if (Plymouth.GetMode() != "shutdown" && Plymouth.GetMode() != "reboot") {
-Plymouth.SetBootProgressFunction(progress_callback); }
+
+Plymouth.SetBootProgressFunction(progress_callback);
 
 #----------------------------------------- Quit --------------------------------
 
 fun quit_callback ()
 {
  anim.sprite.SetOpacity (0);
-  if (Plymouth.GetMode() == "shutdown") {
-   motif.sprite.SetOpacity(0);
-  }
 }
 
 Plymouth.SetQuitFunction(quit_callback);

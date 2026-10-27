@@ -7,6 +7,7 @@ sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exf
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo mkdir -p /etc/chrony.d
 sudo mkdir -p /etc/sysctl.d
+sudo mkdir -p /etc/wireguard
 mkdir -p /home/spike/.cache
 mkdir -p /home/spike/screenshots
 mkdir /home/spike/Downloads
@@ -49,6 +50,7 @@ sudo cp -r macOS /usr/share/plymouth/themes/
 sudo cp -r litarvan /usr/share/lightdm-webkit/themes/
 sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
 sudo cp restart-bspwm /usr/bin/
+sudo cp test-plymouth /usr/bin/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
