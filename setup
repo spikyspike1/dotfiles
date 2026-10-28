@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install packages
-sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm gnome-themes-extra mpc mpd mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi lightdm-webkit2-greeter acpi stress dunst libnotify brightnessctl pamixer ttf-jetbrains-mono-nerd obs-studio sof-firmware libfdk-aac openresolv wireguard-tools
+sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm gnome-themes-extra mpc mpd mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi lightdm-webkit2-greeter acpi stress dunst libnotify brightnessctl pamixer ttf-jetbrains-mono-nerd obs-studio sof-firmware libfdk-aac openresolv wireguard-tools xorg-xcalc
 
 # create directories
 sudo mkdir -p /etc/X11/xorg.conf.d
@@ -53,6 +53,7 @@ sudo cp restart-bspwm /usr/bin/
 sudo cp test-plymouth /usr/bin/
 sudo cp soft-reboot /usr/bin/
 sudo cp zscroll /usr/bin/
+sudo cp vimrc /etc/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
