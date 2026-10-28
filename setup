@@ -52,6 +52,7 @@ sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
 sudo cp restart-bspwm /usr/bin/
 sudo cp test-plymouth /usr/bin/
 sudo cp soft-reboot /usr/bin/
+sudo cp zscroll /usr/bin/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 
 # install non-packaged things (requires some user interaction)
