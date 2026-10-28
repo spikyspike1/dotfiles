@@ -239,6 +239,8 @@ Plymouth.SetBootProgressFunction(progress_callback);
 fun quit_callback ()
 {
  anim.sprite.SetOpacity (0);
+ progress_box.sprite.SetOpacity(0);
+ progress_bar.sprite.SetOpacity(0);
 }
 
 Plymouth.SetQuitFunction(quit_callback);
