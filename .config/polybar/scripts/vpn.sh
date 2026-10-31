@@ -22,11 +22,9 @@ case "$1" in
     if [ "$(connection_status)" = "1" ]; then
         sudo wg-quick down "$config" 2>/dev/null
 	echo "down"
-	dunstify -a Wireguard -t 2000 "VPN is down!"
     else
         sudo wg-quick up "$config" 2>/dev/null
 	echo "up"
-	dunstify -a Wireguard -t 2000 "VPN is up!"
     fi
     ;;
 *)
