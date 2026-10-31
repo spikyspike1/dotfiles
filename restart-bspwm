@@ -10,4 +10,5 @@ sxhkd &
 picom &
 polybar &
 xset r rate 200 48 &
+mpd-mpris &
 #bspc wm -r &

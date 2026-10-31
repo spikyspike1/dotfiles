@@ -2,6 +2,7 @@
 
 . "$HOME/.xinitrc"
 mpd &
+mpd-mpris &
 feh --bg-fill /usr/share/backgrounds/laundry.jpg &
 polybar &
 picom &
