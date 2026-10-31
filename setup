@@ -47,7 +47,6 @@ sudo cp default.pa /etc/pulse/
 sudo cp -r Bibata-Modern-Classic /usr/share/icons/
 sudo cp -r macOS /usr/share/plymouth/themes/
 sudo cp -r litarvan /usr/share/lightdm-webkit/themes/
-sudo cp Downloads/lockscreen.jpg /usr/share/backgrounds/
 sudo cp restart-bspwm /usr/bin/
 sudo cp test-plymouth /usr/bin/
 sudo cp soft-reboot /usr/bin/
