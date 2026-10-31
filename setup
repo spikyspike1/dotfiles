@@ -20,7 +20,6 @@ cp .xprofile /home/spike/
 cp .Xresources /home/spike/
 cp -r .config /home/spike/
 cp -r music /home/spike/
-cp -r 'Restore Firefox' /home/spike/
 cp -r aur-malware-check /home/spike/
 cp -r .local /home/spike/
 sudo cp laundry.jpg /usr/share/backgrounds/
