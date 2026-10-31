@@ -4,7 +4,7 @@ XF86MonBrightnessDown
 	~/.config/sxhkd/scripts/brightness.sh 5%-
 XF86AudioMicMute
 	~/.config/sxhkd/scripts/mic.sh
-
+####################################################################
 super + q
 	kitty
 super + l
@@ -22,6 +22,11 @@ alt + Escape
 super + r
 #	pkill -USR1 -x sxhkd
 	/usr/bin/restart-bspwm
+super + Control_R
+	~/.config/sxhkd/scripts/keyboard.sh
+##############################################################
+#MPD
+
 shift + alt + p
 	mpc toggle
 shift + alt + Up
@@ -41,7 +46,7 @@ shift + alt + Right
 shift + alt + Left
 	mpc seek -5
 
-
+################################################################
 
 XF86AudioRaiseVolume
 	~/.config/sxhkd/scripts/volume.sh +2%
@@ -49,6 +54,9 @@ XF86AudioLowerVolume
 	~/.config/sxhkd/scripts/volume.sh -2%
 XF86AudioMute
 	pactl set-sink-mute 0 toggle; mpc pause-if-playing
+
+################################################################
+
 # quit/restart bspwm
 super + alt + q
 #	bspc {quit,wm -r}
