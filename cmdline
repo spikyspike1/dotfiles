@@ -1,1 +1,1 @@
-root=/dev/archvg/root rw  quiet splash loglevel=0 rd.udev.log_priority=3
+root=/dev/archvg/root rw  quiet splash loglevel=0 rd.udev.log_priority=3 vt.global_cursor_default=0
