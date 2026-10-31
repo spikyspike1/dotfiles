@@ -51,6 +51,7 @@ sudo cp restart-bspwm /usr/bin/
 sudo cp test-plymouth /usr/bin/
 sudo cp soft-reboot /usr/bin/
 sudo cp zscroll /usr/bin/
+sudo cp os-age /usr/bin/
 sudo cp vimrc /etc/
 # font
 sudo systemctl restart systemd-vconsole-setup.service 

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo
+echo $(( ($(date +%s) - $(stat -c %W /)) / 3600 )) hours "/ "$(( ($(date +%s) - $(stat -c %W /)) / 60 )) minutes "/ "$(( ($(date +%s) - $(stat -c %W /)))) seconds
+echo
