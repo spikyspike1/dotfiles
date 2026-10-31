@@ -9,4 +9,3 @@ zscroll -l 20 \
         --update-check true "`dirname $0`/mpdstatus.sh" &
 
 wait
-
