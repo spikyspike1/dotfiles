@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # install packages
 
@@ -7,11 +7,11 @@ sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exf
 
 # copy files
 
-cp -r files/spike/* /home/spike/
+cp -r files/spike/. /home/spike/
 
-sudo cp -r files/etc/* /etc/
-sudo cp -r files/usr/* /usr/
-sudo cp -r files/efi/* /efi/
+sudo cp -r files/etc/. /etc/
+sudo cp -r files/usr/. /usr/
+sudo cp -r files/efi/. /efi/
 
 # font
 
