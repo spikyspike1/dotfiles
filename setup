@@ -46,6 +46,7 @@ sudo pacman-key --lsign-key F3B607488DB35A47
 sudo pacman --noconfirm -U \
 https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-20240331-1-any.pkg.tar.zst \
 https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-27-1-any.pkg.tar.zst
+sudo cp files/pacman.conf /etc/
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm linux-cachyos linux-cachyos-headers
 
@@ -66,4 +67,3 @@ sudo chown -R spike:spike /etc/wireguard/
 
 sudo systemctl enable --now dbus
 sudo systemctl enable --now lightdm
-soft-reboot
