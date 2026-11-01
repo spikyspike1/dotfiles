@@ -18,7 +18,9 @@ sudo systemctl restart systemd-vconsole-setup.service
 
 # install non-packaged things
 
-make -C files/git/ble.sh install PREFIX=/home/spike/.local
+cd files/git/
+make -C ble.sh install PREFIX=/home/spike/.local
+cd ../../
 
 curl -sS https://starship.rs/install.sh --yes | sh
 
@@ -32,9 +34,9 @@ sudo chmod +x /usr/bin/zen
 
 # install the cachyos kernel
 
-sudo pacman-key --noconfirm --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
-sudo pacman-key --noconfirm --lsign-key F3B607488DB35A47
-sudo pacman --noconfirm -U \
+sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key F3B607488DB35A47
+sudo pacman -U \
 https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-20240331-1-any.pkg.tar.zst \
 https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-27-1-any.pkg.tar.zst
 sudo pacman -Syu --noconfirm
