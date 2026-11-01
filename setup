@@ -22,7 +22,7 @@ cd files/git/
 make -C ble.sh install PREFIX=/home/spike/.local
 cd ../../
 
-files/installstarship.sh
+files/installstarship.sh -f
 
 cd files/git/i3lock-color
 sh install-i3lock-color.sh
