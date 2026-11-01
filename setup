@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# install packages
-
+# install packages (copy mirrorlist before)
+sudo cp etc/pacman.d/mirrorlist /etc/pacman.d/
+sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exfatprogs fastfetch feh flameshot git htop kitty lightdm gnome-themes-extra mpc mpd mpd-mpris mpv ncmpcpp ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-cjk noto-fonts-emoji noto-fonts nvme-cli pavucontrol pulseaudio pcmanfm picom polybar qemu ranger refind rofi sl smartmontools sxhkd testdisk tldr tmux vim w3m xorg-xinit xorg xorg-server bc imagemagick wget zip unzip ttf-jetbrains-mono cpupower vulkan-intel gimp plymouth chrony pacman-contrib terminus-font cdrtools virtualbox cantarell-fonts sbctl openssh vi lightdm-webkit2-greeter acpi stress dunst libnotify brightnessctl pamixer ttf-jetbrains-mono-nerd obs-studio sof-firmware libfdk-aac openresolv wireguard-tools xorg-xcalc fuse ntsync-autoload alsa-utils
 
 # copy files
