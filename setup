@@ -19,9 +19,10 @@ sudo systemctl restart systemd-vconsole-setup.service
 
 # install non-packaged things
 
-cd files/git/
+git clone https://github.com/Raymo111/i3lock-color.git
+git clone --recursive https://github.com/akinomyoga/ble.sh.git
+
 make -C ble.sh install PREFIX=/home/spike/.local
-cd ../../
 
 files/installstarship.sh -f
 
@@ -32,6 +33,8 @@ cd ../../..
 wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
 curl -s https://updates.zen-browser.app/install.sh | sh
 sudo chmod +x /usr/bin/zen
+
+rm -rf ble.sh i3lock-color
 
 # install the cachyos kernel
 
