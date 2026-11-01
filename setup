@@ -14,9 +14,6 @@ mkdir /home/spike/Downloads
 mkdir /home/spike/Videos
 # copy files
 cp .bashrc /home/spike/
-cp .xinitrc /home/spike/
-cp .xsession /home/spike/
-cp .xprofile /home/spike/
 cp .Xresources /home/spike/
 cp -r .config /home/spike/
 cp -r music /home/spike/
