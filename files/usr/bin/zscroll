@@ -8,6 +8,7 @@ from subprocess import CalledProcessError, check_output
 from time import sleep, time
 from unicodedata import east_asian_width
 
+show_prefix = True
 
 def str_to_bool(string):
     """Convert a string (e.g. "true", "false", "yes", "no") to a boolean.
@@ -192,6 +193,12 @@ parser.add_argument(
          print a newline after each update; printing a newline may be
          necessary for panels (default: true)
          """,
+)
+
+parser.add_argument(
+    '--prefix',
+    default='',
+    help="text prefix",
 )
 
 initial_args = None
@@ -407,14 +414,14 @@ def zscroll(lines=0):
     :type lines: int
     """
     # don't modify global var when shifting; keep for comparison
-    shift_text = scroll_text
+    shift_text = args.prefix + scroll_text
+    show_prefix = True
     should_restart_printing = True
     needs_scrolling = False
     last_hidden_was_wide = False
     next_hidden_is_wide = True
     end_time = time() + args.timeout
     num_lines = 0
-    first_display = True
     while True:
         if (args.timeout and time() > end_time) or (lines > 0 and num_lines == lines):
             break
@@ -428,20 +435,23 @@ def zscroll(lines=0):
             needs_scrolling = visual_len(scroll_text) > args.length
             if needs_scrolling:
                 shift_text += args.scroll_padding
+                show_prefix = True
         display_text = build_display_text(
             shift_text,
             needs_scrolling,
             (last_hidden_was_wide or next_hidden_is_wide),
         )
+
+        if show_prefix:
+            display_text = args.prefix + display_text
+
         if args.always_reprint or (args.scroll and needs_scrolling) or should_restart_printing:
             print_text(display_text)
             should_restart_printing = False
-            if first_display:
-                first_display = False
-                sleep(0.7)
-                continue
         if args.scroll and needs_scrolling:
-            if last_hidden_was_wide:
+            if show_prefix:
+                show_prefix = False
+            elif last_hidden_was_wide:
                 # don't shift the text for one update
                 last_hidden_was_wide = False
             elif next_hidden_is_wide:
