@@ -11,6 +11,7 @@ alias ff='printf "\n";fastfetch'
 alias ffs='fastfetch --config configsmall.jsonc --logo-type small'
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
+alias soft-reboot='systemctl soft-reboot'
 alias clr='clear'
 if [[ -n "$TERM_PROGRAM" || -n "$KITTY_WINDOW_ID" ]]; then
 #	fastfetch --config configsmall.jsonc --logo-type small

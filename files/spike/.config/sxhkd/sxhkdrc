@@ -30,17 +30,17 @@ super + Control_R
 shift + alt + p
 	mpc toggle
 shift + alt + Up
-	mpc next
+	pkill mpdscroll.sh; sleep 0.2; mpc next
 shift + alt + Down
-	mpc prev
+	pkill mpdscroll.sh; sleep 0.2; mpc prev
 shift + alt + s
 	mpc stop
 shift + alt + r
-	mpc seek 0 && mpc play &
+	pkill mpdscroll.sh; sleep 0.2; mpc seek 0 && mpc play &
 shift + alt + y
 	mpc single
 shift + alt + t
-	mpc seek 0 && mpc pause &
+	pkill mpdscroll.sh sleep 0.2; mpc seek 0 && mpc pause &
 shift + alt + Right
 	mpc seek +5
 shift + alt + Left

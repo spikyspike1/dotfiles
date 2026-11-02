@@ -414,6 +414,7 @@ def zscroll(lines=0):
     next_hidden_is_wide = True
     end_time = time() + args.timeout
     num_lines = 0
+    first_display = True
     while True:
         if (args.timeout and time() > end_time) or (lines > 0 and num_lines == lines):
             break
@@ -435,6 +436,10 @@ def zscroll(lines=0):
         if args.always_reprint or (args.scroll and needs_scrolling) or should_restart_printing:
             print_text(display_text)
             should_restart_printing = False
+            if first_display:
+                first_display = False
+                sleep(0.7)
+                continue
         if args.scroll and needs_scrolling:
             if last_hidden_was_wide:
                 # don't shift the text for one update
