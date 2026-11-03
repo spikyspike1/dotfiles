@@ -3,6 +3,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='\[\e[1;38;2;255;102;204m\][\u@\h \W]\[\e[22;97m\] >\[\e[0m\] '
+
+export EDITOR=vim
+
 alias w3m='w3m duckduckgo.com'
 alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '

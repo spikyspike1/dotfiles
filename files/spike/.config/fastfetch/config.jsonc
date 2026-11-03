@@ -13,7 +13,7 @@
         "separator": " "
     },
     "modules": [
-	{"type": "break"},{"type": "break"},
+	{"type": "break"},
         {
             "key": "╭───────────╮",
             "type": "custom"
@@ -31,6 +31,10 @@
         {
             "key": "│ {#33}󰅐 uptime  {#keys}│",
             "type": "uptime"
+        },
+	{
+            "key": "│ {#35}󰏗 pkgs    {#keys}│",
+            "type": "packages"
         },
         {
             "key": "│ {#34}{icon} distro  {#keys}│",
@@ -51,6 +55,10 @@
         {
             "key": "│ {#32} shell   {#keys}│",
             "type": "shell"
+        },
+	{
+            "key": "│ {#38} editor  {#keys}│",
+            "type": "editor"
         },
         {
             "key": "│ {#33}󰍛 cpu     {#keys}│",
