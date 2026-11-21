@@ -60,15 +60,14 @@
             "key": "│ {#38} editor  {#keys}│",
             "type": "editor"
         },
+	{
+            "key": "│ {#35} host    {#keys}│",
+            "type": "host"
+        },
         {
             "key": "│ {#33}󰍛 cpu     {#keys}│",
             "type": "cpu",
             "showPeCoreCount": true
-        },
-        {
-            "key": "│ {#34}󰉉 disk    {#keys}│",
-            "type": "disk",
-            "folders": "/"
         },
         {
             "key": "│ {#35} memory  {#keys}│",
