@@ -13,6 +13,7 @@ sudo cp -r files/etc/. /etc/
 sudo cp -r files/usr/. /usr/
 sudo cp -r files/efi/. /efi/
 
+mkdir /home/spike/screenshots
 # font
 
 sudo systemctl restart systemd-vconsole-setup.service 
