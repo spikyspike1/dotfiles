@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export SETUPUSER=$USER
+
 # install packages
 
 sudo pacman -Syu --noconfirm
@@ -7,13 +9,14 @@ sudo pacman -S --noconfirm base-devel bash-completion i3lock bspwm btop curl exf
 
 # copy files
 
-cp -r files/spike/. /home/spike/
+cp -r files/user/. /home/$SETUPUSER/
 
 sudo cp -r files/etc/. /etc/
 sudo cp -r files/usr/. /usr/
 sudo cp -r files/efi/. /efi/
 
-mkdir /home/spike/screenshots
+mkdir /home/$SETUPUSER/screenshots
+
 # font
 
 sudo systemctl restart systemd-vconsole-setup.service 
@@ -23,7 +26,7 @@ sudo systemctl restart systemd-vconsole-setup.service
 git clone https://github.com/Raymo111/i3lock-color.git
 git clone --recursive https://github.com/akinomyoga/ble.sh.git
 
-make -C ble.sh install PREFIX=/home/spike/.local
+make -C ble.sh install PREFIX=/home/$SETUPUSER/.local
 
 files/installstarship.sh -f
 
@@ -62,7 +65,7 @@ sudo hwclock --systohc
 sudo sysctl --system
 sudo locale-gen
 sudo chmod -R u+rw /etc/wireguard/
-sudo chown -R spike:spike /etc/wireguard/
+sudo chown -R $SETUPUSER:$SETUPUSER /etc/wireguard/
 
 # done
 
